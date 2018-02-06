@@ -24,7 +24,7 @@
         $(document).ready(function(){
         // about me fader
         $('.learnmore.fa-chevron-right').click(function() {
-            $(".about").addClass("moveToTop");
+            $(".head").addClass("moveToTop");
             $(this).parent().fadeOut("slow");
             $(this).parent().next('.atwork').delay(600).fadeIn("slow");
         });
@@ -46,14 +46,14 @@
         });
 
         // portfolio hover
-        $(".portBox").mouseenter(function() {
-            var thisDesc = $(this).children(".description");
-            thisDesc.css("background", thisColor);
-            
-            $(this).children("p").toggleClass("hideme").toggleClass("showme");
+        $(".portBox").on("mouseenter",function() {
+            //$(this).fadeOut("fast");
+            $(this).children(".description").delay(150).fadeIn("slow");
+           // $(this).children(".description").show("slide", {direction: "right"}, 400);
         });
-        $(".portBox").mouseout(function() {
-            $(this).children("p").toggleClass("showme").toggleClass("hideme");
+        $(".portBox").on("mouseleave", function() {
+            $(this).children(".description").delay(150).fadeOut("slow");
+            //$(this).children(".description").hide("slide", {direction: "right"}, 400);
         });
             
         });
@@ -141,421 +141,102 @@
           </div>
         </div>
     </section>
-    <!--<section id="resume">
-      
-      <div class="container padded">
-        <h2>Resume</h2>
-
-        <h3 class="col-xs-12 accentColor">Education</h3>
-        <div id="education-slider" class="carousel slide" data-ride="carousel" data-interval="false">
-                      
-            <div class="carousel-inner ed" role="listbox">
-              <div class="item active">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">University of North Carolina at Wilmington</span>
-                  </div>
-                  <div class="col-xs-12 col-sm-9">
-                      Bachelor of Arts, English<br>Literature and Language<br>
-                      Founding Member, UNCW chapter of the international English Honor Society,<br> <a href="https://uncw.edu/english/eia/clubs.html" target="_blank">Sigma Tau Delta</a>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">Continuing Education</span><br>Self-Paced Study<br>Online Courses<br><em>Ongoing</em>
-                  </div>
-                  <div class="col-xs-12 col-sm-9">
-                      Advanced Javascript<br>jQuery/CSS Animation<br>Advanced PHP<br>UX Design/Front-End Techniques<br>CSS Grid
-                  </div>
-                
-              </div>
-            </div>
-          
-            <a class="left carousel-control ed" href="#education-slider" role="button" data-slide="prev">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control ed" href="#education-slider" role="button" data-slide="next">
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        
-        <h3 class="col-xs-12 accentColor">Experience</h3>
-      </div>
-      
-      <div class="container padded">
-      
-        
-        <div id="experience-slider" class="carousel slide" data-ride="carousel" data-interval="false">
-                     
-            <div class="carousel-inner exp" role="listbox">
-              <div class="item active">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">RTI International</span><br>Research Triangle Park, NC<br>
-                  </div>
-                  <div class="col-xs-12 col-sm-9 resume-padded">
-                        <span class="accentColor boldText">Web Designer III</span>
-                        <ul>
-                            <li>Lead developer or developer resource on projects of varying complexity.</li>
-                            <li>Responsibilities may include any or all of the following: front-end development, back-end development - with or without database integration, UX Design, tailored interactivity with JavaScript/JQuery, user testing, coordination of deployment and ongoing maintenance.</li>
-                            <li>Projects are deployed to either RTI internal website or public-facing project website (<a href="#portfolio">Portfolio</a>).</li>
-                            <li>Design complex database systems that provide the foundation for more complex Web applications.</li>
-                            <li>Design the user experience to optimize usability and streamline data flow.</li>
-                        </ul>
-                        <span class="accentColor boldText">Skills</span><br>
-                        <span>HTML5, CSS3, ColdFusion, PHP, JavaScript, SQL Server, JQuery, Bootstrap, Dreamweaver, Wordpress, More...</span>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">RTI International</span><br>Research Triangle Park, NC<br>
-                  </div>
-                  <div class="col-xs-12 col-sm-9 resume-padded">
-                        <span class="accentColor boldText">Independent Contractor, Publications Specialist III</span>
-                        <ul>
-                            <li>Formatted and validated report documents to align with section 508 of the Americans with Disabilities Act using the latest HTML, CSS, and PDF technologies.</li>
-                            <li>Developed custom SharePoint applications to facilitate interdepartmental collaboration and transfer of information within the publishing group.</li>
-                            <li>Trained publication staff on personal data management.</li>
-                        </ul>
-                      <span class="accentColor boldText">Skills</span><br>
-                      <span>508 Compliance, Adobe Acrobat Professional, SharePoint Development (ASP/SQL Server), Front-End Development (HTML/CSS), Publication Technologies (XML/XSLT)
-                </div>
-            </div>
-
-                <div class="item">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">IT Works</span><br>Raleigh, NC<br><em>Jan 2008-Feb 2009</em>
-                  </div>
-                  <div class="col-xs-12 col-sm-9">
-                        <span class="accentColor boldText">Independent Contractor</span>
-                        <ul>
-                            <li>Front-end developer for lead-generating Web site based on designer template.</li>
-                            <li>Worked closely with Web site administrator to prepare for deployment.</li>
-                            <li>Reviewed and analyzed Google Analytics data to identify successful Web site content.</li>
-                            <li>SEO using Google Analytics - made web server and web site content recommendations to optimize search engine results and minimize organic shift after deployment.</li>
-                        </ul>
-                        <span class="accentColor boldText">Skills</span><br>
-                        <span>HTML/CSS, JavaScript/jQuery, Dreamweaver, Adobe Photoshop, SEO with Google Analytics
-                    </div>
-                </div>
-                <div class="item">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">iiSolutions, Inc. </span><br>Arlington, VA (Remote)<br>
-                  </div>
-                  <div class="col-xs-12 col-sm-9">
-                        <span class="accentColor boldText">Independent Contractor</span>
-                        <ul>
-                            <li>System administration - ongoing maintenance, operating system upgrades, hardware upgrades, migration, disaster recovery.</li>
-                            <li>Network administration -  Windows domain support, virtual host Web site support.</li>
-                            <li>Database Administration - supported database applications on leased hardware running on various operating systems (Linux, Windows).</li>
-                            <li>Level 3 technical support (phone-based)</li>
-                        </ul>
-                            <span class="accentColor boldText">Skills</span><br>
-                            <span>Windows Server, Windows Workstation, Exchange Server, Active Directory, Kaseya remote client management, SQL Server/MS Access, Sonicwall Firewall, IIS Firewall
-                  </div>
-              </div>
-          </div>
-        
-         <a class="left carousel-control" href="#experience-slider" role="button" data-slide="prev">
-              <i class="fa fa-chevron-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#experience-slider" role="button" data-slide="next">
-              <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-    </section>
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>ColdFusion</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-            </div>
-
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>PHP</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>JavaScript</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>JQuery</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-    
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>HTML5</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                    <div class="col-xs-6 skills-padded">
-                        <p>CSS</p>
-                    </div>
-                    <div class="col-xs-6 ratingBox">
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                    </div>
-                </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>Responsive Design</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>SQL Server</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>MYSQL</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>Bootstrap</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-    
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>WordPress</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-    
-            </div>
-            
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>XML</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>Dreamweaver</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-    
-            </div>
-
-            <div class="row skills">
-                    <div class="col-xs-6 skills-padded">
-                        <p>Adobe Acrobat</p>
-                    </div>
-                    <div class="col-xs-6 ratingBox">
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    </div>
-                </div>
-                
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>Section 508 Accessibility</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-            
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>Photoshop</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-            </div>  
-        </div>
-    </section>-->
 
     <section id="portfolio">
         <div class="container">
             <h2>Portfolio</h2>
             <div class="row">
                 <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Neonatal Research Network</h4>
+                    
+                    <img src="images/buildingblocks.png" title="Building Blocks Initiative">
+                    <div class="description">
+                            <h4>Building Blocks Initiative <a href="http://www.buildingblockspartner.org/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></h4>
+                        <div class="descrHead">Lead Developer</div><div class="descrContent">Skills used: HTML, CSS3, Adapt Designer Layout, Bootstrap, JavaScript, Responsive Design</div>
+                    </div>
+                </div>   
+                <div class="col-sm-4 portBox portHover">
+                    <img src="images/unitedwaync.png" title="United Way of NC">
+                    <div class="description">
+                    <h4>United Way of North Carolina <a href="http://www.unitedwaync.org/our-money-needs-calculator" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></h4>
+                    
+                        <div class="descrHead">Lead Developer</div> <div class="descrContent">Skills used: HTML, CSS3, Drupal, JavaScript, Responsive Design</div> 
+                    </div>
+                </div>   
+                <div class="col-sm-4 portBox portHover">
                     <img src="images/neonatal.png" title="Neonatal Research Network">
                     <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>ColdFusion, JavaScript, Responsive Design</em></p>
+                    <h4>Neonatal Research Network <a href="http://neonatal.rti.org" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></h4>
+                    
+                        <div class="descrHead">Developer Resource</div> <div class="descrContent">Skills used: HTML, CSS3, ColdFusion, JavaScript, Custom Grid Framework, Responsive Design</div> 
                     </div>
                 </div>   
                 <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">HIV Risk Reduction Toolkit</h4>
                     <img src="images/hrret.png" title="HIV Risk Reduction Toolkit">
                     <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>ColdFusion, Jekyll, JavaScript, GitHub</em></p>
+                    <h4>HIV Risk Reduction Toolkit <a href="https://wwwn.cdc.gov/hivrisk/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></h4>
+                    
+                        <div class="descrHead">Developer Resource</div> <div class="descrContent">Skills used: HTML, CSS3,  ColdFusion, Jekyll, GitHub, JavaScript</div> 
                     </div>
                 </div>   
                 <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Adolescent Pregnancy Prevention</h4>
                     <img src="images/prep.png" title="FYSB Call for Abstracts">
                     <div class="description">
-                        <p>Lead Developer</p>
-                        <p><em>ColdFusion, SQL Server, JavaScript, Responsive Design</em></p>
+                    <h4>Adolescent Pregnancy Prevention <a href="https://prepeventregistration.rti.org/c4a" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></h4>
+                    
+                        <div class="descrHead">Lead Developer</div> <div class="descrContent">Skills used: HTML, CSS3, ColdFusion, SQL Server, JavaScript, Custom Grid Framework, Responsive Design</div> 
                     </div>
                 </div>  
                 <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Sexual Assault Kit Initiative</h4>
                     <img src="images/saki.png" title="Sexual Assault Kit Initiative">
                     <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>ColdFusion, SQL Server, JavaScript, Responsive Design</em></p>
+                    <h4>Sexual Assault Kit Initiative <a href="https://sakitta.rti.org/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></h4>
+                    
+                        <div class="descrHead">Developer Resource</div> <div class="descrContent">Skills used: HTML, ColdFusion, SQL Server, JavaScript</div> 
                     </div>
                 </div>
                 <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Global Center for Youth Employment</h4>
                     <img src="images/gcyerti.png" title="Global Center for Youth Employment">
                     <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>Wordpress, PHP, CSS3, Responsive Design</em></p>
+                    <h4>Global Center for Youth Employment <a href="http://gcyerti.com" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></h4>
+                    
+                        <div class="descrHead">Developer Resource</div> <div class="descrContent">Skills used: HTML, CSS3, Wordpress, PHP, Responsive Design</div> 
                     </div>
                 </div> 
                 <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Early Check Newborn Screening</h4>
                     <img src="images/earlycheck.png" title="Early Check Newborn Screening">
                     <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>Wordpress, PHP, CSS3, Responsive Design</em></p>
+                    <h4>Early Check Newborn Screening <a href="http://earlycheck.org" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></h4>
+                    
+                        <div class="descrHead">Developer Resource</div> <div class="descrContent">Skills used: HTML, CSS3, Wordpress, PHP, Responsive Design</div> 
                     </div>
                 </div> 
                 <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Indian Cancer Society</h4>
                     <img src="images/indiancancersociety.png" title="Indian Cancer Society">
                     <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>Wordpress, PHP, CSS3, Responsive Design</em></p>
+                    <h4>Indian Cancer Society <a href="http://indiancancersocietydelhi.in/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a></h4>
+                    
+                        <div class="descrHead">Developer Resource</div> <div class="descrContent">Skill used: HTML, CSS3, Wordpress, PHP, Responsive Design</div> 
                     </div>
                 </div>  
                 <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">USAID Energy Mini-Grids Toolkit</h4>
                     <img src="images/usaidenergy.png" title="USAID Energy Mini-Grids Toolkit">
                     <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>HTML,SHTML,JavaScript</em></p>
+                    <h4>USAID Energy Mini-Grids Toolkit</h4>
+                        <div class="descrHead">Developer Resource</div> <div class="descrContent">Skills used: HTML, SHTML, JavaScript</div> 
                     </div>
                 </div> 
                 <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Digital Product Toolkit</h4>
                     <img src="images/DPT.png" title="Digital Product Toolkit">
                     <div class="description">
-                        <p>Lead Developer</p>
-                        <p><em>HTML, CSS3, JavaScript, Responsive Design</em></p>
+                    <h4>Digital Product Toolkit</h4>
+                        <div class="descrHead">Lead Developer</div> <div class="descrContent">Skills used: HTML, CSS3, Responsive Design, Adapt Designer Layout</div> 
                     </div>
                 </div>
                 <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Online Tracking Resource (OTR)</h4>
                     <img src="images/OTR.png" title="Online Tracking Resource (OTR)">
                     <div class="description">
-                        <p>Lead Developer</p>
-                        <p><em>ColdFusion, JavaScript, SQL Server, CSS3, Responsive Design</em></p>
+                    <h4>Online Tracking Resource (OTR)</h4>
+                        <div class="descrHead">Lead Developer</div> <div class="descrContent">Skills used: HTML, CSS3, ColdFusion, SQL Server, Bootstrap, JavaScript, Responsive Design</div> 
                     </div>
                 </div>
             </div>
