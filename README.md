@@ -1,5 +1,5 @@
 # Interactive-Resume
 Cheryl Velez Interactive Resume
 
-This repository contains my interactive resume which, upon completion, will be published at http://www.cherylvelez.com/. 
+This branch contains the development version of my interactive resume which, upon completion, will be published at http://www.cherylvelez.com/. 
 

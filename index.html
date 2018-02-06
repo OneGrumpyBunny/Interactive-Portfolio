@@ -6,567 +6,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cheryl Velez, Web Developer, UX Designer</title>
     <script src="https://use.fontawesome.com/d8ef64cd62.js"></script>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/cherylvelez.css" rel="stylesheet">
     <link href="css/animation.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="js/cherylvelez.js"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script>
-        
-        $(document).ready(function(){
-        // about me fader
-        $('.learnmore.fa-chevron-right').click(function() {
-            $(".about").addClass("moveToTop");
-            $(this).parent().fadeOut("slow");
-            $(this).parent().next('.atwork').delay(600).fadeIn("slow");
-        });
-
-        $('.learnmore.fa-chevron-left').click(function() {
-            $(this).parent().fadeOut("slow");
-            $(this).parent().prev('.atwork').delay(600).fadeIn("slow");
-        });
-        
-        // slow scroll
-        $('a[href^="#"]').on('click', function(event) {
-            var target = $(this.getAttribute('href'));
-            if( target.length && target.selector != "#education-slider" && target.selector != "#experience-slider") {
-                event.preventDefault();
-                $('html, body').stop().animate({
-                    scrollTop: target.offset().top
-                }, 1000);
-            }
-        });
-
-        // portfolio hover
-        $(".portBox").mouseenter(function() {
-            var thisDesc = $(this).children(".description");
-            thisDesc.css("background", thisColor);
-            
-            $(this).children("p").toggleClass("hideme").toggleClass("showme");
-        });
-        $(".portBox").mouseout(function() {
-            $(this).children("p").toggleClass("showme").toggleClass("hideme");
-        });
-            
-        });
-    </script>
+    
   </head>
-  <body data-spy="scroll" data-target="#hamsandwich">
-    <!-- nav -->
-    <section id="top">
-      <header class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-              <div class="navbar-header">
-                  <button type="button" aria-controls="bs-navbar" aria-expanded="false" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hamsandwich">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <p class="navbar-text navbar-left" style="padding: 0 15px;">Cheryl Velez</p>
-                  <!-- <a class="navbar-brand" href="#">Brand</a> -->
-              </div>
-              <nav class="navbar-collapse collapse" aria-expanded="false" id="hamsandwich" style="height:1px;">
-                  <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#top">Profile</a></li>
-                    <li><a href="#resume" id="ResNav">Resume</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="http://blog.cherylvelez.com/">Blog</a></li>
-                  </ul>
-              </nav>
-          </div>
-        </header>
-        <div class="banner">
-            <div class="container">
-                <!-- Image by Ben Kolde. https://unsplash.com/@benkolde?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" -->
-        <!--      <p class="inlinecenter hero">Cheryl Velez</p>
-              <p class="inlinecenter herosub accentColor">Interactive Resume</p>-->
-            </div>
-        </div>
-    </section>
+  <body>
     
-    <section id="profile">
-        <div class="container blockcenter">
-          <div class="row">
-            <div class="col-md-4 col-sm-6 name">
-                
-                <p class="primary">Cheryl Velez</p>
-                <p class="secondary">Web Developer<br>UX Designer</p>
-                <p class="tertiary">Interactive Resume</p>
-            </div>
-            
-            <div class="col-md-4 col-sm-6">
-                <img src="images/cheryl.png">
-                <div class="social">
-                  <a href="https://www.linkedin.com/in/cheryl-velez-a781818/" target="_blank" title="LinkedIn"><i class="fa fa-fw fa-linkedin"></i></a>
-                  <a href="http://twitter.com/onegrumpybunny" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i></a>
-                  <a href="https://codepen.io/onegrumpybunny/" target="_blank" title="CodePen"><i class="fa fa-fw fa-codepen"></i></a>
-                  <a href="https://github.com/OneGrumpyBunny/" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i></a>
-                  <a href="http://blog.cherylvelez.com/" target="_blank" title="Blog"><i class="fa fa-fw fa-wordpress"></i></a>
-                  <a href="mailto:onegrumpybunny@gmail.com" title="Email"><i class="fa fa-fw fa-envelope-o"></i></a>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 about">
-
-                <p class="head">You need a website that looks amazing and actually works. That's what I do.</p>
-                <p>Learn more about me <i class="learnmore next fa fa-chevron-right"></i></p>
-
-                <p class="atwork" style="display:none;">I'm passionate about three things: quality, elegance and effenciency, which is the essence of every successful website project. It's this passion for elegant design and my talent for web development that equips me with the ability to provide a superior product and service to my employers and their clients.<br>
-                    <i class="learnmore next fa fa-chevron-right"></i></p>                        
-                
-                <p class="atwork" style="display:none;">I work alongside talented designers to produce a full-featured, engaging website experience. As lead developer, I successfully manage the full life-cycle of website projects including, concept, strategy, coding, version control, user testing, and ultimately - deployment.<br>
-                <i class="learnmore next fa fa-chevron-right"></i></p>
-                
-               <p class="atwork" style="display:none;">With the ever changing landscape of web development, I pick up new techniques and apply them to current projects whenever possible. As a lifelong learner, I am self-taught through online courses, self-paced study and old-fashioned elbow grease. Nearly all of my programming knowledge comes from self-paced study.  <br>
-               <i class="learnmore prev fa fa-chevron-left"></i> <i class="learnmore next fa fa-chevron-right"></i></p>
-
-                <p class="atwork" style="display:none;">My career began at an Internet Service Provider in the mid 90's. Since then, I have held various titles  including System Administrator, Lead Developer, and UX Designer. My talents are constantly evolving, and my skillset grows with each new technique I learn.  Currently, I'm studying web animation.<br>
-                <i class="learnmore prev fa fa-chevron-left"></i> <i class="learnmore next fa fa-chevron-right"></i></p>
-
-                <p class="atwork" style="display:none;">Outside of professional life, I exercise my creative muscles by crafting, gardening, sewing, painting, photography, you name it. I love DIY and working with my hands. I try to learn a new skill with each new year. This year, it was learning how to sew. I did it, and I loved it.  <br>
-                <i class="learnmore prev fa fa-chevron-left"></i> </p>
-            </div>
-
-
-          </div>
-        </div>
-    </section>
-    <section id="resume">
+      <script>
+          function randomVid() {
+            var vid1="237938466"; // rocky beach
+            var vid2="237749030"; // sunset
+            var vid3="240357590"; // river
+            var val1=Math.random() * 4;
+            var rand=Math.floor(val1);
+            //var modVal = rand % 2;
+            //console.log(val1 + " | " + rand + " | " + modVal)
       
-      <div class="container padded">
-        <h2>Resume</h2>
-
-        <!-- education -->
-        <h3 class="col-xs-12 accentColor">Education</h3>
-        <div id="education-slider" class="carousel slide" data-ride="carousel" data-interval="false">
-                      
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner ed" role="listbox">
-              <div class="item active">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">University of North Carolina at Wilmington</span><br>
-                  </div>
-                  <div class="col-xs-12 col-sm-9">
-                      Bachelor of Arts, English<br>Literature and Language<br>
-                      Founding Member, UNCW chapter of the international English Honor Society,<br> <a href="https://uncw.edu/english/eia/clubs.html" target="_blank">Sigma Tau Delta</a>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">Continuing Education</span><br>Self-Paced Study<br>Online Courses<br><em>Ongoing</em>
-                  </div>
-                  <div class="col-xs-12 col-sm-9">
-                      Advanced Javascript<br>jQuery/CSS Animation<br>Advanced PHP<br>UX Design/Front-End Techniques<br>CSS Grid
-                  </div>
-                
-              </div>
-            </div>
+            if (rand == 1) {
+              
+              $("#vimeo_player").removeClass("river").removeClass("ocean");
+              $("#vimeo_player").attr("src", "https://player.vimeo.com/video/"+vid2+"?api=1&;player_id=vimeo_player&autoplay=1&loop=1&color=ffffff")
+              $("#vimeo_player").addClass("sunset");
+            }
+            if (rand== 2) {
+              $("#vimeo_player").removeClass("sunset").removeClass("river");
+              $("#vimeo_player").attr("src", "https://player.vimeo.com/video/"+vid1+"?api=1&;player_id=vimeo_player&autoplay=1&loop=1&color=ffffff")
+              $("#vimeo_player").addClass("ocean");
+            }
+            if (rand == 3) {
+              $("#vimeo_player").removeClass("sunset").removeClass('ocean');
+              $("#vimeo_player").attr("src", "https://player.vimeo.com/video/"+vid3+"?api=1&;player_id=vimeo_player&autoplay=1&loop=1&color=ffffff")
+              $("#vimeo_player").addClass("river");
+            }
+      
+          }
+      
+          $(function() {
+            var vimeo_iframe = $('#vimeo_player')[0];
+            var player = $f(vimeo_iframe);
+        
+            player.addEvent('ready', function() {
+                player.api('setVolume', 0);
+            });
+        });
+          </script>
+        </head>
+      <body > <!--onLoad="randomVid();"-->
           
-            <!-- Controls -->
-            <a class="left carousel-control ed" href="#education-slider" role="button" data-slide="prev">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control ed" href="#education-slider" role="button" data-slide="next">
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-              <span class="sr-only">Next</span>
-            </a>
+          <!--  Content  -->
+      <article>
+          <h1>Cheryl Velez<br />Web Developer, Lover of Oceans and Sunsets</span></h1>
+          <div class="social">
+            <!-- Social -->
+              
+            <a href="https://www.linkedin.com/in/cheryl-velez-a781818/" target="_blank" title="LinkedIn"><i class="fa fa-fw fa-linkedin"></i></a>
+            <a href="http://twitter.com/onegrumpybunny" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i></a>
+            <a href="https://codepen.io/onegrumpybunny/" target="_blank" title="CodePen"><i class="fa fa-fw fa-codepen"></i></a>
+            <a href="https://github.com/OneGrumpyBunny/" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i></a>
+            <a href="http://blog.cherylvelez.com/" target="_blank" title="Blog"><i class="fa fa-fw fa-wordpress"></i></a>
+            <a href="mailto:onegrumpybunny@gmail.com" title="Email"><i class="fa fa-fw fa-envelope-o"></i></a>
           </div>
-        
-        <h3 class="col-xs-12 accentColor">Experience</h3>
-      </div> <!-- container -->
+          <p class="secondaryTxt">Please enjoy this video while I continue work on my personal portfolio ....</p>
+      </article>
+          
+      <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
+      <div class="video">  
+      <!--  <iframe id="embeddedVideo" src="https://player.vimeo.com/video/237749030?title=0&amp;byline=0&amp;portrait=0&amp;color=3a6774&amp;autoplay=1&amp;loop=1" width="1920" height="1080" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+      <!--<iframe  src="https://player.vimeo.com/video/237938466?api=1&;player_id=vimeo_player&autoplay=1&loop=1&color=ffffff" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+      <video autoplay loop class="fillWidth">
+          <source id="vimeo_player" src="video/MP4/Aloha-Mundo.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      </video>
       
-      <div class="container padded">
-        <!-- experience -->
-        
-        <div id="experience-slider" class="carousel slide" data-ride="carousel" data-interval="false">
-                     
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner exp" role="listbox">
-              <div class="item active">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">RTI International</span><br>Research Triangle Park, NC<br>
-                  </div>
-                  <div class="col-xs-12 col-sm-9 resume-padded">
-                        <span class="accentColor boldText">Web Designer III</span>
-                        <ul>
-                            <li>Lead developer or developer resource on projects of varying complexity.</li>
-                            <li>Responsibilities may include any or all of the following: front-end development, back-end development - with or without database integration, UX Design, tailored interactivity with JavaScript/JQuery, user testing, coordination of deployment and ongoing maintenance.</li>
-                            <li>Projects are deployed to either RTI internal website or public-facing project website (<a href="#portfolio">Portfolio</a>).</li>
-                            <li>Design complex database systems that provide the foundation for more complex Web applications.</li>
-                            <li>Design the user experience to optimize usability and streamline data flow.</li>
-                        </ul>
-                        <span class="accentColor boldText">Skills</span><br>
-                        <span>HTML5, CSS3, ColdFusion, PHP, JavaScript, SQL Server, JQuery, Bootstrap, Dreamweaver, Wordpress, More...</span>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">RTI International</span><br>Research Triangle Park, NC<br>
-                  </div>
-                  <div class="col-xs-12 col-sm-9 resume-padded">
-                        <span class="accentColor boldText">Independent Contractor, Publications Specialist III</span>
-                        <ul>
-                            <li>Formatted and validated report documents to align with section 508 of the Americans with Disabilities Act using the latest HTML, CSS, and PDF technologies.</li>
-                            <li>Developed custom SharePoint applications to facilitate interdepartmental collaboration and transfer of information within the publishing group.</li>
-                            <li>Trained publication staff on personal data management.</li>
-                        </ul>
-                      <span class="accentColor boldText">Skills</span><br>
-                      <span>508 Compliance, Adobe Acrobat Professional, SharePoint Development (ASP/SQL Server), Front-End Development (HTML/CSS), Publication Technologies (XML/XSLT)
-                </div>
-            </div>
-
-                <div class="item">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">IT Works</span><br>Raleigh, NC<br><em>Jan 2008-Feb 2009</em>
-                  </div>
-                  <div class="col-xs-12 col-sm-9">
-                        <span class="accentColor boldText">Independent Contractor</span>
-                        <ul>
-                            <li>Front-end developer for lead-generating Web site based on designer template.</li>
-                            <li>Worked closely with Web site administrator to prepare for deployment.</li>
-                            <li>Reviewed and analyzed Google Analytics data to identify successful Web site content.</li>
-                            <li>SEO using Google Analytics - made web server and web site content recommendations to optimize search engine results and minimize organic shift after deployment.</li>
-                        </ul>
-                        <span class="accentColor boldText">Skills</span><br>
-                        <span>HTML/CSS, JavaScript/jQuery, Dreamweaver, Adobe Photoshop, SEO with Google Analytics
-                    </div>
-                </div>
-                <div class="item">
-                  <div class="col-xs-12 col-sm-3">
-                      <span class="boldText">iiSolutions, Inc. </span><br>Arlington, VA (Remote)<br>
-                  </div>
-                  <div class="col-xs-12 col-sm-9">
-                        <span class="accentColor boldText">Independent Contractor</span>
-                        <ul>
-                            <li>System administration - ongoing maintenance, operating system upgrades, hardware upgrades, migration, disaster recovery.</li>
-                            <li>Network administration -  Windows domain support, virtual host Web site support.</li>
-                            <li>Database Administration - supported database applications on leased hardware running on various operating systems (Linux, Windows).</li>
-                            <li>Level 3 technical support (phone-based)</li>
-                        </ul>
-                            <span class="accentColor boldText">Skills</span><br>
-                            <span>Windows Server, Windows Workstation, Exchange Server, Active Directory, Kaseya remote client management, SQL Server/MS Access, Sonicwall Firewall, IIS Firewall
-                  </div>
-              </div>
-          </div>
-        
-          <!-- Controls -->
-         <a class="left carousel-control" href="#experience-slider" role="button" data-slide="prev">
-              <i class="fa fa-chevron-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#experience-slider" role="button" data-slide="next">
-              <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-    </section>
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>ColdFusion</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-            </div>
-
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>PHP</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>JavaScript</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>JQuery</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-    
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>HTML5</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                    <div class="col-xs-6 skills-padded">
-                        <p>CSS</p>
-                    </div>
-                    <div class="col-xs-6 ratingBox">
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                    </div>
-                </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>Responsive Design</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>SQL Server</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>MYSQL</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>Bootstrap</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-    
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>WordPress</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                </div>
-    
-            </div>
-            
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>XML</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>Dreamweaver</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-    
-            </div>
-
-            <div class="row skills">
-                    <div class="col-xs-6 skills-padded">
-                        <p>Adobe Acrobat</p>
-                    </div>
-                    <div class="col-xs-6 ratingBox">
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                        <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    </div>
-                </div>
-                
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>Section 508 Accessibility</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-            
-            </div>
-            <div class="row skills">
-                <div class="col-xs-6 skills-padded">
-                    <p>Photoshop</p>
-                </div>
-                <div class="col-xs-6 ratingBox">
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star accentColor" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                    <i class="fa fa-star primaryColorLt" aria-hidden="true"></i>
-                </div>
-            </div>  
-        </div>
-    </section>
-
-    <section id="portfolio">
-        <div class="container">
-            <h2>Portfolio</h2>
-            <div class="row">
-                <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Neonatal Research Network</h4>
-                    <img src="images/neonatal.png" title="Neonatal Research Network">
-                    <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>ColdFusion, JavaScript, Responsive Design</em></p>
-                    </div>
-                </div>   
-                <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">HIV Risk Reduction Toolkit</h4>
-                    <img src="images/hrret.png" title="HIV Risk Reduction Toolkit">
-                    <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>ColdFusion, Jekyll, JavaScript, GitHub</em></p>
-                    </div>
-                </div>   
-                <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Adolescent Pregnancy Prevention</h4>
-                    <img src="images/prep.png" title="FYSB Call for Abstracts">
-                    <div class="description">
-                        <p>Lead Developer</p>
-                        <p><em>ColdFusion, SQL Server, JavaScript, Responsive Design</em></p>
-                    </div>
-                </div>  
-                <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Sexual Assault Kit Initiative</h4>
-                    <img src="images/saki.png" title="Sexual Assault Kit Initiative">
-                    <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>ColdFusion, SQL Server, JavaScript, Responsive Design</em></p>
-                    </div>
-                </div>
-                <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Global Center for Youth Employment</h4>
-                    <img src="images/gcyerti.png" title="Global Center for Youth Employment">
-                    <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>Wordpress, PHP, CSS3, Responsive Design</em></p>
-                    </div>
-                </div> 
-                <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Early Check Newborn Screening</h4>
-                    <img src="images/earlycheck.png" title="Early Check Newborn Screening">
-                    <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>Wordpress, PHP, CSS3, Responsive Design</em></p>
-                    </div>
-                </div> 
-                <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Indian Cancer Society</h4>
-                    <img src="images/indiancancersociety.png" title="Indian Cancer Society">
-                    <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>Wordpress, PHP, CSS3, Responsive Design</em></p>
-                    </div>
-                </div>  
-                <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">USAID Energy Mini-Grids Toolkit</h4>
-                    <img src="images/usaidenergy.png" title="USAID Energy Mini-Grids Toolkit">
-                    <div class="description">
-                        <p>Team Developer Resource</p>
-                        <p><em>HTML,SHTML,JavaScript</em></p>
-                    </div>
-                </div> 
-                <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Digital Product Toolkit</h4>
-                    <img src="images/DPT.png" title="Digital Product Toolkit">
-                    <div class="description">
-                        <p>Lead Developer</p>
-                        <p><em>HTML, CSS3, JavaScript, Responsive Design</em></p>
-                    </div>
-                </div>
-                <div class="col-sm-4 portBox portHover">
-                    <h4 class="accentColor">Online Tracking Resource (OTR)</h4>
-                    <img src="images/OTR.png" title="Online Tracking Resource (OTR)">
-                    <div class="description">
-                        <p>Lead Developer</p>
-                        <p><em>ColdFusion, JavaScript, SQL Server, CSS3, Responsive Design</em></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+      </div>
   </body>
 </html>
+
+<!--
+      <div class="header">
+      Cheryl Velez
+      </div>
+      
+      <div class="content">
+        
+      </div>
+
+    </div> 
+  -->
 
