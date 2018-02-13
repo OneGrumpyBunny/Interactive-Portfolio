@@ -19,7 +19,7 @@ a {
   padding: 5px;
 }
 main {
-  background: url(http://dev.cherylvelez.com/images/banner.jpg);
+  background: url(http://www.cherylvelez.com/images/banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
@@ -49,26 +49,19 @@ section {
   display: flex;  
   flex: 1 1 100%;
   flex-direction:column;
-  background: #eeeeee70;
+  background: rgba(238,238,238,0.4);
 }
 
 article {
-  background: #eeeeee70;
+  background: rgba(238,238,238,0.4);
   align-content: center;
   display: flex;
   height: 65vh;
 }
 banner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
   padding: 0px;
   margin-bottom:1rem;
   text-align: center;
@@ -78,7 +71,7 @@ banner {
 home {
     flex: 1 1 75%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     animation: 1.2s fadein 0 forwards;
 }
 
@@ -112,7 +105,7 @@ h1 {
   font-weight: 600;
   letter-spacing: 1rem;
   margin: 1rem 0 .2rem 0;
-  text-shadow: 1px 1px 13px #eeeeee70;
+  text-shadow: 1px 1px 13px rgba(238,238,238,0.4);
   padding: 5px
 }
 banner h2 {
@@ -120,19 +113,19 @@ banner h2 {
 }
 h2 {
   font-size: 30px;
-  text-shadow: 1px 1px 13px #eeeeee70;
+  text-shadow: 1px 1px 13px rgba(238,238,238,0.4);
   font-weight: 400;
   text-align:center;
 }
 
 h3 {
   font-size: 40px;
-  text-shadow: 1px 1px 13px #eeeeee70;
+  text-shadow: 1px 1px 13px rgba(238,238,238,0.4);
   margin-top: 1rem;
 }
 
 home, profile, portfolio, playground {
-  background-color: #eeeeee70;
+  background-color: rgba(238,238,238,0.4);
   flex: 1 1 100%;
   padding: 10px;
   overflow: hidden;
@@ -156,8 +149,8 @@ profile1, profile2, profile3, profile4 {
 
 
 .profileIcons i:hover, .profileIcons i:active, .profileIcons i.active {
-   color: #000000a6;
-   border-color: #000000a6;
+   color: rgba(0,0,0,0.6);
+   border-color: rgba(0,0,0,0.6);
 }
 .profileIcons i {
   border: 2px solid #949494;
@@ -186,7 +179,7 @@ profile1, profile2, profile3, profile4 {
 portfolio {  
   flex-direction:row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 profile {
   flex-direction:row;
@@ -271,7 +264,7 @@ footer {
     background-color: #211716;
     flex: 0 0 4%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     height: 5vh;
 }
@@ -288,7 +281,7 @@ footer > a:hover {
 nav {
   display: flex;
   flex-direction: row;
-  background-color: #dddddd80;
+  background-color: rgba(221,221,221,0.5);
   
   height: 70px;
   opacity: .9;
@@ -322,7 +315,7 @@ nav div > i {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #eeeeee90;
+  background: rgba(238,238,238,0.5);
   height: 100%;
   padding-left: 5px;
 }
@@ -351,17 +344,17 @@ nav, footer, section > * {
 @media all and (max-width: 960px) {
   
 a {
-    margin: 3px;
-    padding: 0;
-}
+      margin: 3px;
+      padding: 0;
+  }
 
-nav a > i {
-    font-size: 121%;
-}
+  nav a > i {
+      font-size: 121%;
+  }
 
-nav p {
-    font-size: 120%;
-}
+  nav p {
+      font-size: 120%;
+  }
 }
 
 @media all and (max-width:680px) {
@@ -378,7 +371,7 @@ nav p {
   }
   nav p {
     font-size: 108%;
-}
+  }
   .navlink {
     flex: 0 0 60%;
   }
@@ -389,42 +382,46 @@ nav p {
 }
 
 @media all and (max-width: 400px) {
-  home img {
-    display:none;
-  }
-  profile {
-    flex-direction:column;
-    flex-wrap:nowrap;
-    justify-content: space-evenly;
-  }
-  portfolio {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .profileIcons {
-    flex-direction:row;
-  }
-  .profileIcons i{
-    margin: 0 10px;
-  }
-  profile1, profile2, profile3, profile4 {
-    line-height:normal;
-  }
-  
-  .portText {
-    padding: 4px;
-    text-align:center;
-  }
-  div.item {
-    margin: 0px;
-    min-width: 86px;
-    max-width: 0;
-  }
-  div.item:active {
-    transition: none;
-    transform: none;
-  }
+    home img {
+      display:none;
+    }
+    profile {
+      flex-direction:column;
+      flex-wrap:nowrap;
+      justify-content: space-around;
+    }
+    portfolio {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .profileIcons {
+      flex-direction:row;
+    }
+    .profileIcons i{
+      margin: 0 10px;
+    }
+    profile1, profile2, profile3, profile4 {
+      line-height:normal;
+    }
+    
+    .portText {
+      padding: 4px;
+      text-align:center;
+    }
+    div.item {
+      margin: 0px;
+      min-width: 86px;
+      max-width: 0;
+    }
+    div.item:active {
+      transition: none;
+      transform: none;
+    }
+    article {
+      height:50vh;
+    }
 }
+
 @media all and (max-height:375px) {
   banner h2 {
     font-weight: 300;
