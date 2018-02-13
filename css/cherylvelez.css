@@ -424,6 +424,9 @@ nav p {
     transition: none;
     transform: none;
   }
+  article {
+    height:50vh;
+  }
 }
 @media all and (max-height:375px) {
   banner h2 {
