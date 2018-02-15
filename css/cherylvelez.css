@@ -24,9 +24,8 @@ main {
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-flex;
+    display: flex;   
   -webkit-box-orient:vertical;
   -webkit-box-direction:normal;
       -ms-flex-direction:column;
@@ -45,8 +44,8 @@ main {
   padding-left: 20px;
 }
 .showme {
-  display:-webkit-box;
-  display:-ms-flexbox;
+  display: -webkit-flex;
+  
   display:flex;
   opacity:0;
   -webkit-animation: 1.2s fadein 1s forwards;
@@ -181,8 +180,8 @@ home, profile, portfolio, playground {
           flex: 1 1 100%;
   padding: 10px;
   overflow: hidden;
-  display:-webkit-box;
-  display:-ms-flexbox;
+  display: -webkit-flex;
+  
   display:flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -197,12 +196,12 @@ profile1, profile2, profile3, profile4 {
       -ms-flex-align: center;
           align-items: center;
   width: 70vw;
-  height: 30vh;
+  /*height: 30vh;*/
   line-height: 1.8rem;
 }
 .profileIcons {
-  display:-webkit-box;
-  display:-ms-flexbox;
+  display: -webkit-flex;
+  
   display:flex;
   -webkit-box-orient:vertical;
   -webkit-box-direction:normal;
@@ -290,6 +289,7 @@ playground {
 .links {
   display:flex;
   flex-direction:column;
+  align-items: center;
 }
 .links > a:hover, .links > a:active {
   color:#000;
@@ -317,16 +317,17 @@ div.item {
   float: left;
   overflow: hidden;
   margin: 10px 1%;
-  height: 184px;
+  height: 150px;
   width: 100%;
   text-align: center;
-  display: none;
+  /*display: none;*/
   overflow: hidden;
 }
 
-div.item:first-of-type, div.item:nth-of-type(2), div.item:nth-of-type(3), div.item:nth-of-type(6) {
+/* div.item:first-of-type, div.item:nth-of-type(2), div.item:nth-of-type(3), div.item:nth-of-type(6) {
   display:block;
-}
+} */
+
 div.item * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -441,8 +442,8 @@ nav div > i {
 } 
 
 .navlink {
-  display:-webkit-box;
-  display:-ms-flexbox;
+  display: -webkit-flex;
+  
   display:flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -461,8 +462,8 @@ nav div > i {
 }
 
 .navlink div {
-  display:-webkit-box;
-  display:-ms-flexbox;
+  display: -webkit-flex;
+  
   display:flex;
   -webkit-box-orient:vertical;
   -webkit-box-direction:normal;
@@ -574,12 +575,12 @@ a {
           justify-content: space-around;
     }
     portfolio {
-      -webkit-box-orient: horizontal;
+      -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      /*-ms-flex-wrap: wrap;
+          flex-wrap: wrap;*/
     }
     .profileIcons, .links {
       -webkit-box-orient:horizontal;
@@ -594,16 +595,26 @@ a {
       line-height:normal;
     }
     
+    playground p {
+      line-height:normal; 
+      align-items: center;
+      padding: 10px;
+    }
     .portText {
       padding: 4px;
       text-align:center;
+      line-height:normal;
     }
     div.item {
-      margin: 0px;
-      min-width: 86px;
-      max-width: 0;
+      margin: 14px;
+    /* min-width: 86px; */
+    width: 50px;
+    height: 50px;
     }
-    div.item:active {
+    div.item i {
+      display:none;
+    }
+    div.item:active, div.item i, div.item:hover i {
       -webkit-transition: none;
       -o-transition: none;
       transition: none;
@@ -613,6 +624,9 @@ a {
     }
     article {
       height:50vh;
+    }
+    .portItems {
+      flex-wrap: wrap;
     }
 }
 
@@ -654,23 +668,30 @@ a {
     line-height: 1.5rem;
     padding:19px;
   }
-  portfolio {
+  /*portfolio {
     -webkit-box-orient:horizontal;
     -webkit-box-direction:normal;
         -ms-flex-direction:row;
             flex-direction:row;
-  }
+  }*/
   
   .portText {
     padding: 4px;
     text-align:center;
   }
-  div.item {
-    margin: 0px;
-    min-width: 86px;
-    max-width: 0;
+  .portItems {
+    flex-wrap: wrap;
   }
-  div.item:active {
+  div.item {
+    margin: 14px;
+    /* min-width: 86px; */
+    width: 50px;
+    height: 50px;
+  }
+  div.item i {
+    display:none;
+  }
+  div.item:active, div.item i, div.item:hover i {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
@@ -680,5 +701,9 @@ a {
   }
   playground h2 {
     display:none;
+  }
+  playground p {
+    line-height:1.2rem;
+    padding: 10px;
   }
 }
