@@ -195,7 +195,7 @@ profile1, profile2, profile3, profile4 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 70vw;
+  width: 50vw;
   /*height: 30vh;*/
   line-height: 1.8rem;
 }
@@ -212,8 +212,8 @@ profile1, profile2, profile3, profile4 {
 playground p {
   border: 3px solid #949494;
   border-radius: 10px;
-  padding: 30px;
-  width: 70vw;
+  padding: 30px;  
+  width:50vw;
   line-height: 1.8rem;
 }
 
@@ -274,6 +274,7 @@ profile {
   -webkit-box-pack:center;
       -ms-flex-pack:center;
           justify-content:center;
+          
 }
 
 playground {
@@ -573,6 +574,7 @@ a {
           flex-wrap:nowrap;
       -ms-flex-pack: distribute;
           justify-content: space-around;
+          width: 100%;
     }
     portfolio {
       -webkit-box-orient: vertical;
@@ -593,12 +595,15 @@ a {
     }
     profile1, profile2, profile3, profile4 {
       line-height:normal;
+      width: 90vw;
+      padding: 10px;
     }
     
     playground p {
       line-height:normal; 
       align-items: center;
       padding: 10px;
+      width: 90vw
     }
     .portText {
       padding: 4px;
@@ -666,7 +671,9 @@ a {
   }
   profile1, profile2, profile3, profile4 {
     line-height: 1.5rem;
-    padding:19px;
+    padding: 10px;
+    width: 90vw;
+
   }
   /*portfolio {
     -webkit-box-orient:horizontal;
@@ -705,5 +712,7 @@ a {
   playground p {
     line-height:1.2rem;
     padding: 10px;
+    width: 90vw;
+
   }
 }
